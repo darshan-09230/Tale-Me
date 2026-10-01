@@ -1,0 +1,440 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Spellathon</title>
+    
+    <link rel="icon" type="image/png" href="FINAL LOGO.png">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Bangers&family=Fredericka+the+Great&family=Special+Elite&display=swap');
+       
+
+        body {
+            font-family: "Raleway", sans-serif;
+            background: linear-gradient(to bottom, #000000, #FF69B4); /* Black to pink gradient background */
+            margin: 0;
+            padding: 0;
+            color: white; /* White text for contrast */
+        }
+
+        header {
+            background-color: rgba(0, 0, 0, 0.7); 
+            color: white;
+            text-align: center;
+            padding: 20px 0;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+            border-radius: 0 0 20px 20px; 
+            animation: fadeIn 2s; 
+        }
+        
+
+      
+        
+
+        nav ul {
+            list-style: none;
+        }
+
+        nav ul li {
+            display: inline;
+            margin-right: 20px;
+        }
+
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+            transition: color 0.3s;
+            background-color:transparent; /* Button color */
+            padding: 10px 15px; /* Padding around links */
+            border-radius: 20px; /* Rounded corners */
+        }
+
+        nav ul li a:hover {
+            background-color: #FF85B2; /* Lighter pink on hover */
+            transform: scale(1.1); /* Slight scale on hover */
+        }
+
+        /* Style the main content */
+        .twist-game-section {
+            background-color: rgba(255, 255, 255, 0.9); /* Semi-transparent white */
+            padding: 40px; /* Increased padding */
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+            border-radius: 10px;
+            margin: 50px auto; /* Centered with auto margins */
+            text-align: center;
+            max-width: 600px; /* Limit width for better appearance */
+        }
+
+        h2 {
+            font-size: 2rem;
+            margin-bottom: 20px;
+            color: #000; /* Black color for contrast */
+        }
+
+        input[type="text"],
+        input[type="range"] {
+            padding: 10px;
+            margin-top: 10px;
+            width: 80%;
+            font-size: 1rem;
+        }
+
+        button {
+            padding: 10px 15px;
+            margin-top: 10px;
+            font-size: 1rem;
+            cursor: pointer;
+            background-color: #333;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+        }
+
+        button:hover {
+            background-color: #555;
+        }
+
+        #result,
+        #score {
+            font-size: 1.2rem;
+            margin-top: 15px;
+        }
+
+        #level-display {
+            font-size: 1.5rem;
+            margin: 10px 0;
+            color: #FF69B4; /* Pink color for level display */
+            position:relative;
+            z-index: 2;
+            color:red;
+            font-family: "Special Elite", serif;
+            font-weight: 400;
+            font-style: normal;
+            text-align: center;
+            font-size: 20px;
+        }
+
+        /* Added spacing between buttons */
+        .button-container {
+            display: flex;
+            justify-content: center;
+            gap: 10px; /* Adjust gap here */
+        }
+
+        footer {
+            background-color: rgba(0, 0, 0, 0.8); /* Transparent black footer */
+            color: white;
+            text-align: center;
+            padding: 15px 0; /* Increased padding */
+            position: relative; /* Ensures footer stays at bottom */
+            bottom: 0;
+            width: 100%;
+            box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.3);
+            margin-top: auto; /* Keep footer at the bottom */
+        }
+
+        footer p {
+            font-size: 0.9rem;
+            margin: 0; /* Reset margin for footer text */
+        }
+        
+
+body {
+    font-family: "Raleway", sans-serif;
+    background: linear-gradient(to bottom, #f0f0f0, #FF69B4); /* Light to pink gradient background */
+    margin: 0;
+    padding: 0;
+    color: #333; /* Dark text for contrast */
+    line-height: 1.6;
+    cursor: url('oth839.cur'), auto;
+}
+
+header {
+    background-color: rgba(0, 0, 0, 0.7); /* Transparent black header */
+    color: white;
+    text-align: center;
+    padding: 20px 0;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+    border-radius: 0 0 20px 20px; /* Rounded bottom corners */
+}
+
+h1 {
+    font-size: 45px;
+    margin: 0;
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+    
+}
+
+nav ul li {
+    display: inline;
+    margin-right: 20px;
+    
+}
+
+nav ul li a {
+            color: white;
+            text-decoration: none;
+            padding: 10px 15px; 
+            border-radius: 20px; 
+            transition: background-color 0.3s, transform 0.3s; 
+            box-shadow: 0 2px 5px rgba(255, 255, 255, 0.5); 
+            border: 2px solid white;
+            color: white;
+            font-family:"Bangers",system-ui ;
+            font-size: 25px;
+            letter-spacing: 3px;
+}
+
+nav ul li a:hover {
+            background-color: #ff1493; 
+            transform: scale(1.1); 
+
+            border: 0px;
+            color: white;
+}
+
+footer {
+    background-color: rgba(0, 0, 0, 0.8); /* Transparent black footer */
+    color: white;
+    text-align: center;
+    padding: 15px 0; /* Increased padding */
+    margin-top: auto; /* Keep footer at the bottom */
+}
+
+footer p {
+    font-size: 0.9rem;
+    margin: 0; /* Reset margin for footer text */
+}
+
+section {
+    background-color: rgba(255, 255, 255, 0.9); /* Semi-transparent white */
+    padding: 40px;
+    box-shadow:  4px 20px rgba(255, 115, 0, 0.2); /* Deeper shadow for depth */
+    border-radius: 10px;
+    margin: 50px auto; /* Centered with auto margins */
+    max-width: 600px; /* Limit width for better appearance */
+}
+
+h2 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+    color: #000; /* Black color for contrast */
+    text-shadow: 1px 1px 2px rgba(255, 255, 255, 0.3); /* Light shadow effect for heading */
+    z-index: 2;
+    color: blue;
+    font-family:"Fredericka the Great", serif;
+    font-weight: 500;
+    font-style: italic;
+    text-align: center;
+    font-size: 40px;
+        
+}
+
+input[type="text"],
+textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-family: "Raleway", sans-serif;
+    cursor: url('oth839.cur'), auto;
+}
+
+button[type="submit"] {
+    background-color: #FF69B4;
+    color: #FFFFFF;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+button[type="submit"]:hover {
+    background-color: #FF1493;
+}
+
+/* General Content Styling */
+label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+textarea {
+    resize: vertical; /* Allow vertical resizing of textarea */
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    h1 {
+        font-size: 35px;
+    }
+    
+    section {
+        padding: 20px;
+        margin: 20px auto;
+    }
+    
+    nav ul li {
+        display: block;
+        margin: 10px 0;
+    }
+}
+    .head {
+        font-size: 50px;
+        margin: 0;
+        text-shadow: 2px 2px 2px rgba(255, 255, 255, 0.5);
+        font-family:"Bangers", system-ui;
+    }
+    .submit{
+            background-color: #ff69b4;
+            color: #FFFFFF;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            font-size: 15px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+            font-weight: bold;
+            
+        }
+        .submit:hover{
+            background-color: #FF1493;
+            transform: scale(1.1);
+        }
+
+
+    </style>
+</head>
+
+<body style="background-image: url('comic-pattern.png'); background-size: cover; background-repeat: no-repeat;">
+    <header>
+        <h1 class="head">Spellathon</h1>
+        <br>
+        
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="twist-in-a-tale.html">Twist in a Tale</a></li>
+                <li><a href="genre-story-game.html">Genre Jumble</a></li>
+                <li><a href="chronicles.html">Life Chronicles</a></li>
+                <li><a href="spell_game.html">Spellathon</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <div class="twist-game-section">
+        <h2>Spell the Word</h2>
+        <div>
+            <label for="level">Select Level: </label>
+            <input type="range" id="level" min="1" max="10" value="1" step="1" />
+        </div>
+        <div id="level-display">Level: 1</div>
+        <button class="submit">Start</button>
+        <p id="word-to-spell" style="display: none;"></p> <!-- Hide the word display -->
+        <input type="text" id="user-input" placeholder="Type the word here..." />
+        <div class="button-container">
+            <button class="submit">Submit</button>
+            <button class="submit" title="Repeat Word">🔊</button>
+        </div>
+        <p id="result"></p>
+        <p id="score">Score: 0</p>
+    </div>
+
+    <footer>
+        <p>&copy; 2024 Twist in a Tale</p>
+    </footer>
+
+    <script>
+        const wordLevels = {
+        1: ["cat", "dog", "hat", "bat", "rat", "cow", "pig", "owl"],
+        2: ["apple", "banana", "grape", "peach", "mango", "pear", "plum", "berry"],
+        3: ["orange", "kiwi", "cherry", "lemon", "lime", "melon", "fig", "apricot"],
+        4: ["wonder", "beautiful", "mountain", "ocean", "sunrise", "valley", "forest", "river"],
+        5: ["enthusiasm", "incredible", "perception", "adventure", "imagination", "creativity", "dedication", "exploration"],
+        6: ["mysterious", "phenomenon", "extraordinary", "discovery", "curiosity", "puzzle", "breakthrough", "observation"],
+        7: ["unbelievable", "consequence", "acquaintance", "exhilarating", "remarkable", "association", "surprising", "astounding"],
+        8: ["unpredictable", "incompatibility", "exasperating", "transformative", "contradiction", "adaptation", "frustrating", "evolutionary"],
+        9: ["extraordinary", "responsibility", "contemporary", "incomprehensible", "visionary", "complicated", "exceptional", "challenging"],
+        10: ["misunderstanding", "disproportionate", "characteristically", "unquestionable", "unfathomable", "overwhelming", "philosophically", "extraordinarily"],
+
+};
+
+let currentWord = '';
+let score = 0;
+
+// Function to speak the word
+function speakWord(word) {
+    const utterance = new SpeechSynthesisUtterance(word);
+    utterance.rate = 0.5; // Slow speech
+    window.speechSynthesis.speak(utterance);
+}
+
+// Function to get a random word based on the current level
+function getRandomWord() {
+    const level = document.getElementById("level").value;
+    const words = wordLevels[level];
+    return words[Math.floor(Math.random() * words.length)];
+}
+
+// Function to start the game
+function startGame() {
+    currentWord = getRandomWord();
+    document.getElementById("word-to-spell").innerText = currentWord; // Show the word to spell
+    document.getElementById("user-input").value = ''; // Clear previous input
+    document.getElementById("user-input").style.display = 'block'; // Show the input field
+    document.getElementById("result").innerText = ''; // Clear previous result
+    document.getElementById("word-to-spell").style.display = 'none'; // Show the word to spell
+    speakWord(currentWord); // Speak the word
+}
+
+// Function to check the user's answer
+function checkAnswer() {
+    const userInput = document.getElementById("user-input").value;
+    if (userInput.toLowerCase() === currentWord) {
+        score += 1; // Increase score
+        document.getElementById("result").innerText = 'Correct!';
+    } else {
+        document.getElementById("result").innerText = 'Wrong! The correct word was: ' + currentWord;
+        score = 0; // Reset score if wrong
+    }
+    document.getElementById("score").innerText = 'Score: ' + score; // Update score display
+    currentWord = getRandomWord(); // Get a new word
+    document.getElementById("word-to-spell").innerText = currentWord; // Show the new word
+    document.getElementById("user-input").value = ''; // Clear input field
+    speakWord(currentWord);
+}
+
+// Add event listeners to buttons
+document.querySelector(".submit").addEventListener("click", startGame);
+document.querySelectorAll(".submit")[1].addEventListener("click", checkAnswer);
+
+// Update level display when the range input changes
+document.getElementById("level").addEventListener("input", function () {
+    document.getElementById("level-display").innerText = 'Level: ' + this.value; // Update level display
+});
+
+// Hide the word display initially
+document.getElementById("word-to-spell").style.display = 'none';
+
+
+// Event listener for the repeat button
+document.querySelector(".button-container button[title='Repeat Word']").addEventListener("click", () => {
+    speakWord(currentWord);
+});
+
+    </script>
+</body>
+
+</html>

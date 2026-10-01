@@ -1,0 +1,539 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Genre Jumble</title>
+   
+    <link rel="icon" type="image/png" href="FINAL LOGO.png">
+    <link href="https://fonts.googleapis.com/css2?family=Fredericka+the+Great&family=Special+Elite&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Bangers&display=swap" rel="stylesheet">
+    <style>
+        body {
+            background-image: "";
+            color: white;
+            font-family: "Arial", sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+
+        header {
+            text-align: center;
+            padding: 20px 0;
+        }
+
+        nav ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        nav ul li {
+            display: inline;
+            margin: 0 15px;
+        }
+
+        nav ul li a {
+            color: #FF69B4;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+       
+        .center-buttons {
+            text-align: center;
+            margin: 20px 0;
+        }
+
+        /* Style the main content */
+        .rules-section {
+            background-color: rgba(255, 255, 255, 0.1);
+            padding: 20px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+            border-radius: 10px;
+            margin: 20px;
+        }
+
+        .rules-section h2 {
+            color: #FF69B4;
+        }
+
+        .rules-section ul {
+            list-style: disc;
+            padding-left: 20px;
+        }
+
+        .rules-section li {
+            font-size: 1rem;
+            margin-bottom: 10px;
+        }
+
+        input[type="number"],
+        textarea {
+            width: 20%;
+            padding: 10px;
+            border: none;
+            border-radius: 5px;
+            margin: 10px 0;
+            font-size: 1rem;
+            background-color: ivory;
+            cursor: url('oth839.cur'), auto;
+        }
+
+        button {
+            background-color: #FF69B4;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-weight: bold;
+            transition: background-color 0.3s;
+            
+        }
+
+        button:hover {
+            background-color: #FF1493;
+        }
+
+        #game-content {
+            display: none;
+            
+        }
+
+        footer {
+            text-align: center;
+            padding: 20px 0;
+        }
+        .centered {
+            text-align:center;
+            
+        }
+        @import url('https://fonts.googleapis.com/css2?family=Raleway:wght@300;600&display=swap');
+
+body {
+    font-family: "Raleway", sans-serif;
+    background: linear-gradient(to bottom, #f0f0f0, #FF69B4); /* Light to pink gradient background */
+    margin: 0;
+    padding: 0;
+    color: #333; /* Dark text for contrast */
+    line-height: 1.6;
+    cursor: url('oth839.cur'), auto;
+}
+
+header {
+    background-color: rgba(0, 0, 0, 0.8); /* Transparent black header */
+    color: white;
+    text-align: center;
+    padding: 20px 0;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+    border-radius: 0 0 20px 20px; /* Rounded bottom corners */
+}
+
+h1 {
+    font-size: 45px;
+    margin: 0;
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+}
+
+nav ul li {
+    display: inline;
+    margin-right: 20px;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    padding: 10px 15px; /* Padding around links */
+    border-radius: 20px; /* Rounded corners */
+    transition: background-color 0.3s, transform 0.3s; /* Animation */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3); /* Shadow effect on buttons */
+    
+}
+
+nav ul li a:hover {
+    background-color: #FF85B2; /* Lighter pink on hover */
+    transform: scale(1.1); /* Slight scale on hover */
+    color: white;
+    
+}
+
+footer {
+    background-color: rgba(0, 0, 0, 0.8); /* Transparent black footer */
+    color: white;
+    text-align: center;
+    padding: 15px 0; /* Increased padding */
+    margin-top: auto; /* Keep footer at the bottom */
+}
+
+footer p {
+    font-size: 0.9rem;
+    margin: 0; /* Reset margin for footer text */
+}
+
+section {
+    background-color: rgba(255, 255, 255, 0.9); /* Semi-transparent white */
+    padding: 40px;
+    box-shadow:  4px 20px rgba(255, 115, 0, 0.2); /* Deeper shadow for depth */
+    border-radius: 10px;
+    margin: 50px auto; /* Centered with auto margins */
+    max-width: 600px; /* Limit width for better appearance */
+}
+
+h2 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+    color: #000; /* Black color for contrast */
+    text-shadow: 1px 1px 2px rgba(255, 255, 255, 0.3); /* Light shadow effect for heading */
+}
+
+input[type="text"],
+textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-family: "Raleway", sans-serif;
+    background-color:ivory;
+    font-size: 25px;
+}
+
+button[type="submit"] {
+    background-color: #FF69B4;
+    color: #FFFFFF;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+button[type="submit"]:hover {
+    background-color: #FF1493;
+}
+
+/* General Content Styling */
+label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+textarea {
+    resize: vertical; /* Allow vertical resizing of textarea */
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    h1 {
+        font-size: 35px;
+    }
+    
+    section {
+        padding: 20px;
+        margin: 20px auto;
+    }
+    
+    nav ul li {
+        display: block;
+        margin: 10px 0;
+    }
+}
+nav ul li a {
+            color: white;
+            text-decoration: none;
+            padding: 10px 15px; 
+            border-radius: 20px; 
+            transition: background-color 0.3s, transform 0.3s; 
+            box-shadow: 0 2px 5px rgba(255, 255, 255, 0.5); 
+            border: 2px solid white;
+            color: white;
+            font-family:"Bangers",system-ui ;
+            font-size: 25px;
+            letter-spacing: 3px;
+        }
+
+nav ul li a:hover {
+            background-color: #ff1493; 
+            transform: scale(1.1); 
+            border: 0px;
+            color: white;
+        }
+        textarea {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 10px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            font-family: "Bangers", cursive;
+            color: black;
+            cursor: url('oth839.cur'), auto;
+        }
+        h2{
+            z-index: 2;
+            color: blue;
+            font-family:"Fredericka the Great", serif;
+            font-weight: 500;
+            font-style: italic;
+            text-align: center;
+            font-size: 40px;
+        }
+        #title{
+            position:relative;
+            z-index: 2;
+            color:red;
+            font-family: "Special Elite", serif;
+            font-weight: 400;
+            font-style: normal;
+            text-align: center;
+            font-size: 20px;
+        }
+        #genre{
+            color:blue;
+            font-weight: bold;
+            font-size: 30px;
+            text-align: center;
+            font-family:"Special Elite", serif ;
+        }
+        .submit{
+            background-color: #ff69b4;
+            color: #FFFFFF;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            font-size: 15px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+            font-weight: bold;
+        }
+        
+
+
+
+    </style>
+    <style id="btn">
+        
+
+        button {
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+            border: none;
+            border-radius: 5px;
+            background-color: #007bff;
+            color: white;
+        }
+        #loadingSpinner-bg {
+            z-index: 99999;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            background-color: rgb(0 0 0 / 40%);
+            backdrop-filter: blur(8px);
+            align-items: center;
+        }
+        #loadingSpinner {
+            margin-top: 20px;
+            width: 50px;
+            height: 50px;
+            border: 6px solid #f3f3f3;
+            border-top: 6px solid #007bff;
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
+            display: none; /* Hidden by default */
+        }
+
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        /* Popup styling */
+        #popupMessage {
+            position: fixed;
+            top: -50px;
+            left: 50%;
+            transform: translateX(-50%);
+            background-color: red;
+            color: white;
+            padding: 10px 20px;
+            border-radius: 5px;
+            font-size: 18px;
+            transition: top 0.5s ease-in-out;
+            display: none;
+            box-shadow: 0 0 12px 2px black;
+        }
+
+        /* To show the popup */
+        #popupMessage.show {
+            top: 20px; /* Slide down */
+            display: block;
+        }
+        #server{
+            font-size: 30px;
+            font-family:"Fredericka the Great",serif ;
+            font-weight: 500;
+            color:#FF69B4;
+        }
+    </style>
+</head>
+</head>
+
+<body style="background-image: url('comic-pattern.png'); background-size: cover; background-repeat: no-repeat;">
+    <header>
+        <h1>Genre Jumble!</h1>
+        
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="twist-in-a-tale.html">Twist in a Tale</a></li>
+                <li><a href="#">Genre Jumble</a></li>
+                <li><a href="chronicles.html">Life Chronicles</a></li>
+                <li><a href="spell_game.html">Spellathon</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section id="genre-tumble" class="genre-tumble-section">
+        <section id="rules" class="rules-section">
+            <h2>How to Play</h2>
+            <ul id ="title">
+                <li>Click "Generate Story Title" to receive a random story title.</li>
+                <li>Add your creative twist to the story title in the text area.</li>
+                <li>Click "Submit Twist" to submit your twist.</li>
+            </ul>
+        </section>
+        <button id="loadButton" onclick="showLoading()" style="width: 80%; margin-left: 10%;">Join a server</button>
+        <div id="loadingSpinner-bg" style="display: none;">
+            <div id="loadingSpinner"></div>
+        </div>
+        <div id="popupMessage">There are currently no active servers!</div>
+
+        <form id="game-form">
+                 
+            <hr style="margin: 30px">
+            <center id="server">Or, create a server</center>
+            <label for="word-limit">Word Limit:</label>
+            <input type="number" id="word-limit" name="word-limit" required>
+            <label for="num-players">Number of Players:</label>
+            <input type="number" id="num-players" name="num-players" required>
+            <div class="center-buttons">
+                <button class="submit"type="button" onclick="startGame()">Continue</button>
+                <br>
+            </div>
+        </form>
+
+        <div id="game-content">
+            <h3 class="centered">Your Genre is:</h3>
+            <p id="genre"></p>
+            <h3>Your Turn to Write:</h3>
+            <textarea id="story-content" name="story-content" required oninput="updateWordCount()"></textarea>
+            <div id="word-count"></div>
+            <div class="center-buttons">
+                <button onclick="submitStory()">Submit</button>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2024 Genre Jumble</p>
+    </footer>
+
+    <script>
+        let currentPlayer = 1;
+        let maxWordsPerPlayer = 0;
+
+        function startGame() {
+            const wordLimit = document.getElementById('word-limit').value;
+            const numPlayers = document.getElementById('num-players').value;
+            maxWordsPerPlayer = Math.floor(wordLimit / numPlayers);
+            const genre = getRandomGenre();
+
+            document.getElementById('game-content').style.display = 'block';
+            document.getElementById('genre').textContent = genre;
+            document.getElementById('word-count').textContent = `Words remaining for Player ${currentPlayer}: ${maxWordsPerPlayer}`;
+            document.getElementById('story-content').maxLength = maxWordsPerPlayer;
+            updateWordCount(); // Initialize word count
+        }
+
+        function getRandomGenre() {
+            const genres = ['Mystery', 'Romance', 'Fantasy', 'Science Fiction', 'Adventure', 'Horror', 'Historical Fiction', 'Thriller'];
+            const randomIndex = Math.floor(Math.random() * genres.length);
+            return genres[randomIndex];
+        }
+
+        function updateWordCount() {
+            const storyContent = document.getElementById('story-content').value;
+            const wordCount = storyContent.split(/\s+/).filter(Boolean).length;
+            const remainingWords = maxWordsPerPlayer - wordCount;
+            document.getElementById('word-count').textContent = `Words remaining for Player ${currentPlayer}: ${remainingWords}`;
+        }
+
+        function submitStory() {
+            const storyContent = document.getElementById('story-content').value;
+            const wordCount = storyContent.split(/\s+/).filter(Boolean).length;
+
+            if (wordCount > maxWordsPerPlayer) {
+                alert(`Player ${currentPlayer} has exceeded their word limit.`);
+                return;
+            }
+
+            // Redirect to the thank you page
+            window.location.href = 'thankyou.html'; // Replace 'thankyou.html' with the actual URL of your thank you page
+        }
+        async function copyToClipboard(text) {
+            try {
+                await navigator.clipboard.writeText(text);
+                console.log("Text copied to clipboard:", text);
+            } catch (err) {
+                console.error("Failed to copy text:", err);
+            }
+        }
+
+        // Call the copy function when the page loads
+        window.onload = function() {
+            const textToCopy = "In the shadowy alleys of Maplewood, Detective Clara Hastings was called to investigate a string of mysterious murders that had left the town in a state of fear. Each victim had a connection to the old clock tower, which had stood silent for years. As Clara delved deeper into the case, she uncovered hidden secrets and whispered rumors that hinted at a dark history entwined with the tower. Time was running out, and the detective was determined to solve the mystery before another life was claimed.";
+            copyToClipboard(textToCopy);
+        };
+        function showLoading() {
+            // Show the loading spinner
+            document.getElementById('loadingSpinner').style.display = 'block';
+            document.getElementById('loadingSpinner-bg').style.display = 'flex';
+
+            // Optionally hide the button
+            document.getElementById('loadButton').style.display = 'none';
+
+            // After 3 seconds, show the popup and hide the spinner
+            setTimeout(function() {
+                document.getElementById('loadingSpinner').style.display = 'none';
+                document.getElementById('loadingSpinner-bg').style.display = 'none';
+                showPopup();
+            }, 3000);
+        }
+
+        function showPopup() {
+            const popup = document.getElementById('popupMessage');
+            popup.classList.add('show');
+
+            // Hide the popup after 3 seconds
+            setTimeout(function() {
+                popup.classList.remove('show');
+                // Optionally bring the button back
+                document.getElementById('loadButton').style.display = 'block';
+            }, 3000);
+        }
+    </script>
+</body>
+
+</html>

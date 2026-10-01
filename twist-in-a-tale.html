@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Twist in a Tale</title>
+    <link rel="icon" type="image/png" href="FINAL LOGO.png">
+   
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fredericka+the+Great&family=Special+Elite&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Bangers&display=swap" rel="stylesheet">
+    <style>
+        body{
+            cursor: url('oth839.cur'), auto;
+        }
+        .head{
+            font-family:"Bangers",system-ui ;
+        }
+        header {
+            background-color: rgba(0, 0, 0, 0.7); 
+            color: white;
+            text-align: center;
+            padding: 20px 0;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+            border-radius: 0 0 20px 20px; 
+            animation: fadeIn 2s; 
+        }
+        .head {
+            font-size: 50px;
+            margin: 0;
+            text-shadow: 2px 2px 2px rgba(255, 255, 255, 0.5);
+            font-family:"Bangers", system-ui;
+        }
+        nav ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        nav ul li {
+            display: inline;
+            margin-right: 20px;
+        }
+
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            padding: 10px 15px; 
+            border-radius: 20px; 
+            transition: background-color 0.3s, transform 0.3s; 
+            box-shadow: 0 2px 5px rgba(255, 255, 255, 0.5); 
+            border: 2px solid white;
+            color: white;
+            font-family:"Bangers",system-ui ;
+            font-size: 25px;
+            letter-spacing: 3px;
+        }
+
+        nav ul li a:hover {
+            background-color: #ff1493; 
+            transform: scale(1.1); 
+            border: 0px;
+            color: white;
+        }
+        .copyright {
+            background-color: rgba(0, 0, 0, 0.8); 
+            color: white;
+            text-align: center;
+            padding: 15px 0; 
+            margin-top: auto; 
+            
+        }
+
+        .copyright p {
+            font-size: 0.9rem;
+            margin: 0; 
+        }
+        .submit{
+            background-color: #ff69b4;
+            color: #FFFFFF;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            font-size: 15px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+            font-weight: bold;
+            
+        }
+        .submit:hover{
+            background-color: #FF1493;
+            transform: scale(1.1);
+        }
+        input[type="text"],
+        textarea {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 10px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            font-family: "Bangers", cursive;
+            color: black;
+            cursor: url('oth839.cur'), auto;
+            font-size: 25px;
+        }
+
+        textarea {
+            resize: vertical; 
+        }
+        #twist-game{
+            background-color: rgba(255, 255, 255, 0.9); 
+            padding: 40px; 
+            box-shadow:  4px 20px rgba(255, 115, 0, 0.2); 
+            border-radius: 10px;
+            margin: 50px auto; 
+            max-width: 600px; 
+            border: 2px dashed #ff69b4; /* Dashed border for comic effect */
+            z-index:1;
+        }
+        h2{
+            z-index: 2;
+            color: blue;
+            font-family:"Fredericka the Great", serif;
+            font-weight: 500;
+            font-style: italic;
+            text-align: center;
+            font-size: 40px;
+        }
+        #title{
+            position:relative;
+            z-index: 2;
+            color:red;
+            font-family: "Special Elite", serif;
+            font-weight: 400;
+            font-style: normal;
+            text-align: center;
+            font-size: 20px;
+        }
+       
+    </style>
+    
+</head>
+
+<body style="background-image: url('comic-pattern.png'); background-size: cover; background-repeat: no-repeat;">
+    <header>
+        <br>
+        <h1 class="head">Twist in a Tale!</h1>
+        <br>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="#">Twist in a Tale</a></li>
+                <li><a href="genre-story-game.html">Genre Jumble</a></li>
+                <li><a href="chronicles.html">Life Chronicles</a></li>
+                <li><a href="spell_game.html">Spellathon</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section id="twist-game" class="twist-game-section">
+        <h2>Your Story Title:</h2>
+        <p id="title"></p>
+        <br>
+        
+        <button class="submit"type="button" onclick="generateTitle()">Generate Story Title</button>
+        <br>
+        <br>
+        <textarea id="twist-content" name="twist-content"
+            placeholder="Complete your story with a creative twist here..." required></textarea>
+        <button class="submit"type="button" onclick="submitTwist()">Submit Twist</button>
+        <br>
+        <br>
+    </section>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    
+    <footer class="copyright">
+        
+        <p>&copy; 2024 Twist in a Tale</p>
+    </footer>
+
+    <script>
+        const storyTitles = [
+            "Hare and the tortoise",
+            "Hare and the tortoise",
+            "Hare and the tortoise",
+            "Hare and the tortoise",
+            "The Mysterious Map",
+            "The Haunting at Ravenwood Manor",
+            "The Time Traveler's Dilemma",
+        ];
+
+        function generateTitle() {
+            const randomIndex = Math.floor(Math.random() * storyTitles.length);
+            document.getElementById('title').textContent = storyTitles[randomIndex];
+        }
+
+        function submitTwist() {
+            const twistContent = document.getElementById('twist-content').value;
+            // Handle twist submission logic here
+            window.location.href = 'thankyou.html'; // Redirect to thank you page
+        }
+        async function copyToClipboard(text) {
+            try {
+                await navigator.clipboard.writeText(text);
+                console.log("Text copied to clipboard:", text);
+            } catch (err) {
+                console.error("Failed to copy text:", err);
+            }
+        }
+
+        // Call the copy function when the page loads
+        window.onload = function() {
+            const textToCopy = "Once upon a time in a lush green forest, there lived a boastful hare and a humble tortoise. The hare, known for his speed, often mocked the tortoise for being slow. Tired of the hare's constant bragging, the tortoise challenged him to a race. Amused by the idea, the hare accepted, confident that he would easily win. As the race began, the hare darted ahead, leaving the tortoise far behind. Certain of his victory, the hare decided to take a nap under a shady tree, thinking he had plenty of time. Meanwhile, the tortoise continued to plod along steadily, his determination unwavering. As the tortoise approached the finish line, the hare woke up, realizing he had overslept. Panicking, he sprinted toward the finish line, but the tortoise was already crossing it, a look of triumph on his face. The animals of the forest cheered for the tortoise, celebrating his victory. However, in this twist of fate, as the tortoise basked in his win, he suddenly felt an overwhelming fatigue. It turned out that the tortoise had been so focused on the race that he had forgotten to eat and rest properly. As he celebrated, he collapsed from exhaustion, and the hare, realizing what had happened, rushed to his side.Instead of gloating, the hare offered to help the tortoise recover. Together, they sought out some fruits and water to rejuvenate the tortoise. As they spent time together, they shared stories and discovered that they had much more in common than they had previously thought.In the end, the tortoise learned the importance of balance in life, and the hare realized that true friendship was worth more than any race. They became the best of friends, often racing together for fun, but this time with no pressure to win. The forest echoed with laughter and joy as they raced side by side, reminding everyone that it’s not always about who finishes first, but about the journey and the friends we make along the way.";
+            copyToClipboard(textToCopy);
+        };
+    </script>
+</body>
+
+</html>

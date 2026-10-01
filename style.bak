@@ -1,0 +1,125 @@
+
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Sixtyfour+Convergence&family=Raleway:wght@300;600&display=swap');
+
+        body {
+            font-family: "Raleway", sans-serif;
+            background: linear-gradient(to bottom, #000000, #FF69B4); /* Black to pink gradient background */
+            margin: 0;
+            padding: 0;
+            color: #ffffff; /* White text for contrast */
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh; /* Full viewport height */
+            background-image: url('comic-pattern.png');     
+            overflow: hidden; /* Prevent scrollbars */
+        }
+
+        header {
+            background-color: rgba(0, 0, 0, 0.8); /* Transparent black header */
+            color: white;
+            text-align: center;
+            padding: 20px 0;
+            width: 100%;
+            position: fixed; /* Fix header at top */
+            top: 0;
+        }
+
+        h1 {
+            font-size: 45px;
+            font-family: "Sixtyfour Convergence", sans-serif;
+            margin: 0;
+        }
+
+        nav ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        nav ul li {
+            display: inline;
+            margin-right: 20px;
+        }
+
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+            background-color: #FF69B4; /* Button color */
+            padding: 10px 15px; /* Padding around links */
+            border-radius: 20px; /* Rounded corners */
+            transition: background-color 0.3s, transform 0.3s; /* Animation */
+        }
+
+        nav ul li a:hover {
+            background-color: #FF85B2; /* Lighter pink on hover */
+            transform: scale(1.1); /* Slight scale on hover */
+        }
+
+        /* Style the main content */
+        .twist-game-section {
+            background-color: rgba(255, 105, 180, 0.9); /* Semi-transparent pink */
+            padding: 40px;
+            border-radius: 10px;
+            margin-top: 100px; /* Space for fixed header */
+            text-align: center;
+            max-width: 600px; /* Limit width for better appearance */
+        }
+
+        h2 {
+            font-size: 2rem;
+            margin-bottom: 20px;
+            color: #000; /* Black color for contrast */
+        }
+
+        #title {
+            font-weight: bold;
+            color: black;
+            margin-bottom: 20px;
+        }
+
+        textarea {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 10px;
+            border: 2px solid #791919; /* Dark red border */
+            border-radius: 5px; /* Slightly rounded corners */
+            color: #D2691E; /* Chocolate color for text */
+            background-color: #F5F5DC; /* Beige background for a retro feel */
+            font-family: 'Courier New', Courier, monospace; /* Monospace font */
+            font-size: 16px; /* Larger font size */
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Subtle shadow for depth */
+            resize: none; /* Disable resizing */
+        }
+
+        button {
+            background-color: #FF69B4;
+            color: #FFFFFF;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        button:hover {
+            background-color: #FF1493;
+        }
+
+        footer {
+            background-color: rgba(0, 0, 0, 0.8); /* Transparent black footer */
+            color: white;
+            text-align: center;
+            padding: 15px 0; /* Increased padding */
+            width: 100%;
+            position: relative; /* Keeps footer at the bottom */
+        }
+
+        footer p {
+            font-size: 0.9rem;
+            margin: 0; /* Reset margin for footer text */
+        }
+    </style>

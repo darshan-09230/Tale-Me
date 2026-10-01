@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tale Me!</title>
+    <link rel="icon" type="image/png" href="FINAL LOGO.png">
+    <link rel="stylesheet" href="tw.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Exo+2:ital,wght@0,100..900;1,100..900&display=swap');
+        .side-panel {
+            transition: all ease 0.3s;
+        }
+
+        .side-panel.closed {
+            transform: translateX(-18rem) !important;
+        }
+
+        .story-title-tile {
+            display: inline-block;
+            padding: 15px;
+            background-color: #FF69B4;
+            color: white;
+            font-weight: bold;
+            border-radius: 10px;
+            text-align: center;
+            width: fit-content;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            cursor: pointer;
+            transition: transform 0.3s, box-shadow 0.3s;
+            margin: 20px auto;
+        }
+
+        .story-title-tile:hover {
+            transform: scale(1.05);
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+        }
+
+        .story-dropdown {
+            display: none;
+            margin-top: 10px;
+            padding: 20px;
+            text-align: left;
+            font-size: 20px;
+            background-color: green;
+        }
+
+        .story-dropdown.active {
+            display: block;
+        }
+
+        #story {
+            text-align: justify;
+        }
+
+        /* Styles for the popup modal */
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 999;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.7); /* semi-transparent background */
+            align-items: center;
+            justify-content: center;
+        }
+
+        .modal-content {
+            position: relative;
+            background-color: #cb1c1c;
+            border-radius: 10px;
+            border: #1675c3;
+            padding: 30px;
+            text-align: center;
+            max-width: 400px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            animation: popup 0.4s ease-out;
+        }
+
+        /* Animation for popup */
+        @keyframes popup {
+            from {
+                transform: scale(0.5);
+            }
+
+            to {
+                transform: scale(1);
+            }
+        }
+
+        .modal-content h2 {
+            font-size: 30px;
+            color: #128f42;
+            margin-bottom: 10px;
+            font-weight: bold;
+            font-family:"Exo 2",sans-serif;
+        }
+
+        .modal-content p {
+            font-size: 18px;
+            margin-bottom: 20px;
+
+        }
+
+        .premium-button {
+            background-color: #FF69B4;
+            color: white;
+            padding: 10px 20px;
+            font-size: 18px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .premium-button:hover {
+            background-color: #c22475;
+        }
+
+        .close-button {
+            background-color: transparent;
+            color: white;
+            border: none;
+            font-size: 30px;
+            cursor: pointer;
+            position: absolute;
+            top: 10px;
+            right: 15px;
+            font-weight: bold;
+        }
+
+        .close-button:hover {
+            color: rgb(0, 0, 0);
+        }
+        body {
+            cursor: url('oth839.cur'), auto;
+        }
+
+    </style>
+</head>
+
+<body>
+    <header>
+        <h1><img src="FINAL LOGO.png" class="h-20 inline-block">Tale Me!</h1>
+        <b>Chaos + Stories = Entertainment! </b>
+    </header>
+
+    <!-- Side Panel -->
+    <div class="side-panel closed fixed left-0 top-0 h-screen w-72 bg-slate-800/80 backdrop-blur translate-x-0 rounded-r-xl text-center">
+        <button class="side-panel-arrow" id="toggleSidePanel">&#9776;</button>
+        <a href='index.html'>Home</a>
+        <a href='twist-in-a-tale.html'>Twist in a Tale</a>
+        <a href='genre-story-game.html'>Genre jumble</a>
+        <a href='chronicles.html'>Life chronicles</a>
+        <a href="spell_game.html">Spellathon</a>
+        <a href="#" class="side-panel-button" id="goPremium">Go Premium!</a>
+        <a href="#" class="side-panel-button">Redeem Now</a>
+    </div>
+
+    <!-- Main Content -->
+    <main>
+        <p style="text-align: center;">"Welcome to 'Tale Me'<br> Where Imagination Meets Chaos!<br> Dive into a world of literary mayhem with our collection of fun and interactive games that will have you reading and writing the most wildly creative and chaotic stories.<br> Or come to reality, reading actual stories of real people. <br>Unleash your storytelling prowess, spark your imagination, and extend the ‘tail’ today!"</p>
+        <br><br><br>
+        <h1>Awesome Story Collection</h1><br><br>
+
+        <div class="story-title story-title-tile" id="storyDropdownTitle">
+            "Cosmic Chronicles: A Tale Across Genres and Dimensions" &#9660;
+        </div>
+
+        <div class="story-dropdown" id="storyDropdown">
+            <p id="story">Once upon a time in the small town of Harmonyville, something extraordinary happened... <br><br><h1>THE END</h1>
+            </p>
+        </div>
+    </main>
+
+    <!-- Premium Popup Modal -->
+    <div class="modal" id="premiumModal">
+        <div class="modal-content">
+            <button class="close-button" id="closeModal">&times;</button>
+            <h2>Go Premium for ₹19!</h2>
+            <p>Unlock exclusive content, premium features, and an ad-free experience. Don't miss this limited-time offer!</p>
+            <button class="premium-button">Upgrade Now!</button>
+        </div>
+    </div>
+    <script>
+        // JavaScript to toggle the side panel and story dropdown
+        const toggleButton = document.getElementById('toggleSidePanel');
+        const sidePanel = document.querySelector('.side-panel');
+        const main = document.querySelector('main');
+        const storyDropdownTitle = document.getElementById('storyDropdownTitle');
+        const storyDropdown = document.getElementById('storyDropdown');
+
+        toggleButton.addEventListener('click', () => {
+            sidePanel.classList.toggle('closed');
+            main.classList.toggle('main-closed');
+        });
+
+        storyDropdownTitle.addEventListener('click', () => {
+            storyDropdown.classList.toggle('active');
+        });
+
+        // Modal popup functionality
+        const goPremiumBtn = document.getElementById('goPremium');
+        const premiumModal = document.getElementById('premiumModal');
+        const closeModal = document.getElementById('closeModal');
+
+        goPremiumBtn.addEventListener('click', () => {
+            premiumModal.style.display = 'flex';
+        });
+
+        closeModal.addEventListener('click', () => {
+            premiumModal.style.display = 'none';
+        });
+
+        // Close modal when clicking outside the modal content
+        window.addEventListener('click', (e) => {
+            if (e.target === premiumModal) {
+                premiumModal.style.display = 'none';
+            }
+        });
+    </script>
+</body>
+
+</html>
+ 

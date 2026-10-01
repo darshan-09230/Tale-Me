@@ -1,0 +1,173 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Reset some default styles */
+body,
+h1,
+h2,
+p,
+ul,
+li {
+    margin: 0;
+    padding: 0;
+    text-align: center;
+}
+
+@font-face {
+    font-family: Text;
+    src: url(Lato.ttf);
+}
+
+@font-face {
+    font-family: Content;
+    src: url(PlaypenSans.ttf);
+}
+
+/* Set a background color and font for the entire page */
+body {
+    font-family: Text, "Open Sans", Arial, sans-serif;
+    /* background: linear-gradient(180deg, #FC766AFF 50%, #5B84B1FF 50%); */
+    background-color: rgb(187, 83, 72);
+    /* color: #23f12e; */
+    color: white;
+    font-size: 25px;
+}
+
+/* Style the header */
+header {
+    /* background: linear-gradient(180deg, #FC766AFF 50%, rgb(39, 92, 150) 50%);
+    color: rgb(101, 17, 156); */
+    text-align: center;
+    padding: 1rem 0;
+    font-weight: bold;
+}
+
+header h1 {
+    font-size: 32px;
+    font-family: Text, "Georgia", Times New Roman, serif;
+}
+
+nav ul {
+    list-style: none;
+}
+
+nav ul li {
+    display: inline;
+    margin-right: 20px;
+}
+
+nav ul li a {
+    color: #c6e421;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+nav ul li a:hover {
+    color: #FF69B4;
+}
+
+/* Style the main content */
+main {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: rgb(35, 63, 93);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+main h2 {
+    font-size: 1.5rem;
+    margin-bottom: 20px;
+}
+
+/* Style the story cards */
+.story-card {
+    /* background: linear-gradient(180deg, #FF5733 50%, #5B84B1FF 50%); */
+    padding: 20px;
+    margin-bottom: 20px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+
+.story-card h2 {
+    font-size: 1.25rem;
+    margin-bottom: 10px;
+}
+
+.story-card p {
+    font-size: 1rem;
+}
+
+.story-card a {
+    color: #5B84B1FF;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+.story-card a:hover {
+    color: #FF69B4;
+}
+
+/* Style the submit form */
+.submit-story {
+    /* background: linear-gradient(180deg, #5B84B1FF 50%, #FF5733 50%); */
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+
+.submit-story h2 {
+    font-size: 1.5rem;
+    margin-bottom: 20px;
+}
+
+label {
+    display: block;
+    margin-bottom: 5px;
+}
+
+input[type="text"],
+textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+
+button {
+    /* background-color: #0000FF; */
+    @apply bg-slate-600;
+    color: #FFFFFF;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    float: left;
+}
+
+/* CSS for the header */
+header {
+    position: relative;
+    /* Add relative positioning to allow z-index */
+}
+
+p {
+    font-family: Content;
+}
+
+.side-panel a {
+    @apply inline-block bg-slate-500/50 rounded-lg w-[calc(100%-2rem)] mt-3 py-2;
+}
+
+.side-panel-arrow {
+    @apply float-right translate-y-1 w-full bg-transparent p-2 pb-4 rounded-lg font-thin text-3xl;
+    transition: width 0.3s, transform 0.3s, background-color 0.3s, opacity 0.3s;
+}
+
+.side-panel.closed .side-panel-arrow {
+    @apply translate-x-[calc(100%-0.2rem)] hover:translate-x-[calc(100%+0.25rem)] -translate-y-1 hover:translate-y-1 w-14 bg-slate-600/60 backdrop-blur scale-75 hover:scale-100 opacity-75 hover:opacity-100;
+}

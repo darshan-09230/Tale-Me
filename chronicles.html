@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Life Chronicles</title>
+    <link rel="icon" type="image/png" href="FINAL LOGO.png">
+    <link href="https://fonts.googleapis.com/css2?family=Bangers&display=swap" rel="stylesheet"> <!-- Comic-style font -->
+    <style>
+        body {
+            font-family: 'Bangers', cursive;
+            background: linear-gradient(to bottom, #fffae3, #ffe6f2); /* Light pastel gradient */
+            margin: 0;
+            padding: 0;
+            color: #333; 
+            line-height: 1.6;
+            background-image: url('comic-pattern.png'); /* Example comic pattern */
+            background-size: cover;
+            cursor: url('oth839.cur'), auto;
+        }
+
+        header {
+            background-color: rgba(0, 0, 0, 0.7); 
+            color: white;
+            text-align: center;
+            padding: 20px 0;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+            border-radius: 0 0 20px 20px; 
+            animation: fadeIn 2s; 
+        }
+
+        h1 {
+            font-size: 50px;
+            margin: 0;
+            text-shadow: 2px 2px 2px rgba(255, 255, 255, 0.5);
+        }
+
+        nav ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        nav ul li {
+            display: inline;
+            margin-right: 20px;
+        }
+
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            padding: 10px 15px; 
+            border-radius: 20px; 
+            transition: background-color 0.3s, transform 0.3s; 
+            box-shadow: 0 2px 5px rgba(255, 255, 255, 0.5); 
+            border: 2px solid white;
+            font-size: 25px;
+            letter-spacing: 3px;
+        }
+
+        nav ul li a:hover {
+            background-color: #ff1493; 
+            transform: scale(1.1); 
+            border: 0px;
+        }
+
+        .chronicle-section {
+            background-color: rgba(255, 255, 255, 0.9); 
+            padding: 40px; 
+            box-shadow:  4px 20px rgba(255, 115, 0, 0.2); 
+            border-radius: 10px;
+            margin: 50px auto; 
+            max-width: 600px; 
+            border: 2px dashed #ff69b4; /* Dashed border for comic effect */
+        }
+
+        h2 {
+            font-size: 2.5rem; 
+            margin-bottom: 20px;
+            color: #000; 
+            text-shadow: 1px 1px 2px rgba(255, 255, 255, 0.3); 
+        }
+
+        label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: bold;
+        }
+
+        input[type="text"],
+        textarea {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 10px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            font-family: "Bangers", cursive;
+            cursor: url('oth839.cur'), auto;
+            font-size: 25px;
+        }
+
+        textarea {
+            resize: vertical; 
+        }
+
+        button[type="submit"] {
+            background-color: #ff69b4;
+            color: #FFFFFF;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        button[type="submit"]:hover {
+            background-color: #FF1493;
+        }
+
+        .chronicle {
+            background-color: rgba(249, 249, 249, 0.9); 
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            margin-bottom: 10px;
+        }
+
+        .chronicle h3 {
+            font-size: 1.2rem;
+            cursor: pointer; 
+            color: #ff4500; /* Comic-like color */
+        }
+
+        .story-content {
+            display: none;
+            margin-top: 10px;
+        }
+
+        select {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 20px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            font-family: "Bangers", cursive;
+            background: rgba(255, 255, 255, 0.8); /* Transparent background */
+        }
+
+        footer {
+            background-color: rgba(0, 0, 0, 0.8); 
+            color: white;
+            text-align: center;
+            padding: 15px 0; 
+            margin-top: auto; 
+        }
+
+        footer p {
+            font-size: 0.9rem;
+            margin: 0; 
+        }
+        .title{
+            font-size: 25px;
+            letter-spacing: 2px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Life Chronicles!</h1>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="twist-in-a-tale.html">Twist in a Tale</a></li>
+                <li><a href="genre-story-game.html">Genre Jumble</a></li>
+                <li><a href="#">Life Chronicles</a></li>
+                <li><a href="spell_game.html">Spellathon</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section id="chronicles" class="chronicle-section">
+        <h2>Share Your Life Story</h2>
+        <form action="thankyou.html" method="GET" >
+            <label class="title" for="chronicle-title">Title:</label>
+            <input type="text" id="chronicle-title" name="chronicle-title" required>
+            <label class="title" for="chronicle-content">Your Story:</label>
+            <textarea id="chronicle-content" name="chronicle-content" required rows="6"></textarea>
+            <button type="submit">Submit</button>
+        </form>
+    </section>
+
+    <section id="chronicles-list" class="chronicle-section">
+        <h2>Chronicles Collection</h2>
+        <select id="story-dropdown">
+            <option value="">Select a story title</option>
+            <option value="story1">In a daring and hilarious high school prank, I donned a suit, pretended to be a substitute teacher on my last day of school, and faced an unexpected classroom challenge.</option>
+            <!-- Add more options as needed -->
+        </select>
+        <div class="chronicle">
+            <h3 class="catchy-line">Click to reveal the story!</h3>
+            <div class="story-content">
+                <p>On my last day of high school, I pretended I was a substitute teacher and taught a class… For whatever reason, I decided to enter a classroom at the last minute. I poked my head in and asked, “Hello class, where’s your teacher?” They all looked at me, stunned that a ‘teacher’ had just walked in. “I’m here to teach today!” I declared, as they nodded in uncertainty. I quickly shuffled to the front of the class and wrote “History” on the whiteboard. “What do you guys want to learn today?” I asked them, which seemed to throw them off, as I had only received blank stares and silence. It was then that I realized I needed to engage with them a little more. So I set down a history book in front of me, opened it up, and started talking about the Civil War. I found a battle that I had read about before and started sharing some fun facts, as a few students started to join in and ask questions. But just as I was really getting into it and the students seemed to be warming up to me, the real teacher strolled into the room, much to my surprise. “Oh!” I exclaimed, “I didn’t realize you were back so soon! The class was just getting interesting!” The teacher looked very confused. The students giggled and, to my surprise, two students applauded. The teacher seemed to shake his head, almost as if he were trying to process what had just happened, and he held up his hand, signaling me to exit. The students were laughing, and I took a dramatic bow and exited. As I left the classroom, I couldn’t help but laugh at what I had just done.</p>
+            </div>
+        </div>
+        <!-- Add more stories as needed -->
+    </section>
+
+    <footer>
+        <p>&copy; 2024 Life Chronicles. All rights reserved.</p>
+    </footer>
+
+    <script>
+        const dropdown = document.getElementById("story-dropdown");
+        const chronicle = document.querySelector(".chronicle");
+        const storyContent = document.querySelector(".story-content");
+        const catchyLine = document.querySelector(".catchy-line");
+
+        dropdown.addEventListener("change", function() {
+            const selectedValue = this.value;
+            if (selectedValue) {
+                catchyLine.textContent = selectedValue; // Change catchy line to selected value
+                storyContent.style.display = "block"; // Show story content
+            } else {
+                catchyLine.textContent = "Click to reveal the story!";
+                storyContent.style.display = "none"; // Hide story content if no selection
+            }
+        });
+
+        catchyLine.addEventListener("click", function() {
+            storyContent.style.display = storyContent.style.display === "none" ? "block" : "none";
+        });
+        async function copyToClipboard(text) {
+            try {
+                await navigator.clipboard.writeText(text);
+                console.log("Text copied to clipboard:", text);
+            } catch (err) {
+                console.error("Failed to copy text:", err);
+            }
+        }
+
+        // Call the copy function when the page loads
+        window.onload = function() {
+            const textToCopy = "One of the funniest moments of my life happened during my senior year of high school at the annual charity bake sale. Eager to impress, I decided to bake my famous apple pie, which I had perfected over the years. After hours of hard work, I proudly set up my booth, but just as I began pitching my pie, a classmate accidentally bumped into the table. In a moment of slow-motion horror, I watched my beloved pie soar through the air and land—splat!—right on the head of our stern principal, Mr. Thompson. Instead of being angry, he wiped the gooey filling from his face and grinned, turning the mishap into an impromptu pie-eating contest that became the highlight of the event. We raised more money for charity than we ever expected, and “The Great Pie Incident” became a legendary story that still brings laughter to our school every year.";
+            copyToClipboard(textToCopy);
+        };
+    </script>
+</body>
+</html>
